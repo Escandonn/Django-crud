@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Dinero Invertido por Fechas{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Dinero Invertido por Fechas</h1>
+
+    <div class="row">
+        {% for item in fechas_dinero_invertido %}
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Fecha: {{ item.fecha }}</h5>
+                    <p class="card-text">Dinero Invertido: ${{ item.dinero_invertido }}</p>
+                    {% with width_percentage=item.dinero_invertido|floatformat:"0"|add:"" %}
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: {{ item.dinero_invertido }}%;" aria-valuenow="{{ item.dinero_invertido }}" aria-valuemin="0" aria-valuemax="100">{{ width_percentage }}</div>
+                    </div>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

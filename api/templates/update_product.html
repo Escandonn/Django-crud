@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Update {{ product.nombre }}</h1>
+<form method="POST">
+    {% csrf_token %}
+    <!-- Campos del formulario para actualizar el producto -->
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

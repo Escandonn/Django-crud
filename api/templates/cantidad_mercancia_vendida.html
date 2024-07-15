@@ -1,0 +1,14 @@
+<!-- cantidad_mercancia_vendida.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Cantidad de Mercancía Vendida</h1>
+
+    {% if cantidad_mercancia_vendida is not None %}
+    <p>En el período del {{ fecha_inicio }} al {{ fecha_fin }}, se vendieron {{ cantidad_mercancia_vendida }} unidades.</p>
+    {% else %}
+    <p>No hay datos disponibles para el rango de fechas seleccionado.</p>
+    {% endif %}
+</div>
+{% endblock %}

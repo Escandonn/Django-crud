@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Productos Comprados</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Precio de Venta</th>
+                    <th>Fecha de Importación</th>
+                    <th>Cantidad en Inventario</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos_comprados %}
+                <tr>
+                    <td>{{ producto.nombre }}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td>{{ producto.precio_venta }}</td>
+                    <td>{{ producto.fecha_importacion }}</td>
+                    <td>{{ producto.cantidad }}</td>
+                    <td>
+                        <div class="mb-3">
+                            <label class="form-label"></label>
+                            <textarea class="form-control" rows="3" readonly>{{ producto.descripcion }}</textarea>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="{% url 'product_detail' producto.id %}" class="btn btn-sm btn-primary">Modificar o eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

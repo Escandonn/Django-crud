@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Productos Vendidos</h1>
+
+    <ul class="list-group">
+        {% for venta in productos_vendidos %}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col">
+                    <h5 class="mb-1">{{ venta.producto.nombre }}</h5>
+                    <p class="mb-1">Cantidad Vendida: {{ venta.cantidad }}</p>
+                    <p class="mb-1">Fecha de Venta: {{ venta.fecha_venta }}</p>
+                    <p class="mb-1">Precio Total: {{ venta.precio_total }}</p>
+                </div>
+                <div class="col-auto">
+                    <a href="{% url 'venta_detail' venta.id %}" class="btn btn-sm btn-primary">Modificar o eliminar</a>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1>Eliminar Venta</h1>
+
+            <p>¿Estás seguro que deseas eliminar la venta de "{{ venta.producto.nombre }}"?</p>
+
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Confirmar Eliminación</button>
+                <a href="{% url 'list_venta' %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

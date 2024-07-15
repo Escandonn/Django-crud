@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-4 mb-4">Detalles de la Venta</h1>
+
+  {% if error %}
+    <div class="alert alert-danger">
+      {{ error }}
+    </div>
+  {% endif %}
+
+  <form method="POST" action="{% url 'update_venta' venta.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit" class="btn btn-primary mt-3">Actualizar</button>
+  </form>
+
+  <form method="POST" action="{% url 'delete_venta' venta.id %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger mt-3">Eliminar</button>
+  </form>
+
+  <a href="{% url 'list_venta' %}" class="btn btn-secondary mt-3">Volver a la Lista</a>
+</div>
+{% endblock %}

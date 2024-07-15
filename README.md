@@ -37,11 +37,3 @@ Este proyecto es un sistema de gestión de tareas y productos desarrollado con D
 Este proyecto es importante porque proporciona una base sólida para cualquier aplicación que requiera un sistema de gestión de tareas y productos. Puede ser utilizado en una variedad de escenarios, desde pequeñas aplicaciones personales hasta grandes sistemas empresariales. Además, el uso de Django y Django REST Framework garantiza un desarrollo rápido y una estructura de código mantenible.
 
 
-=======
-# Django-crud-
-<<<<<<< HEAD
-Este proyecto es un sistema de gestión de tareas y productos desarrollado con Django y Django REST Framework. Permite a los usuarios crear, leer, actualizar y eliminar tareas y productos comprados y vendidos.
->>>>>>> 3e9d4f03a5e4c67e375e53ce8ed5deece91fc8a5
-=======
-Este proyecto es un sistema de gestión de tareas y productos desarrollado con Django y Django REST Framework. Permite a los usuarios crear, leer, actualizar y eliminar tareas y productos comprados y vendidos..
->>>>>>> a063f4b39df847ea2f4920738797fee86925eb48
